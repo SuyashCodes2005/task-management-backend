@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const morgan = require("morgan");
+const authRoutes = require("./routes/authRoutes");
 
 const connectDB = require("./config/db");
 
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
   res.send("Task Management Backend API Running");
 });
 
+app.use("/api/auth", authRoutes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
