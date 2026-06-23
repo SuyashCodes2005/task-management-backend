@@ -7,6 +7,7 @@ const connectDB = require("./config/db");
 const taskRoutes = require("./routes/taskRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const analyticsRoutes = require("./routes/analyticsRoutes");
+const notificationRoutes = require("./routes/notificationRoutes");
 
 dotenv.config();
 
@@ -29,6 +30,11 @@ app.use(
   dashboardRoutes
 );
 app.use("/api/analytics", analyticsRoutes);
+app.use(
+  "/api/notifications",
+  notificationRoutes
+);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
