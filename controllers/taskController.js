@@ -37,9 +37,29 @@ const createTask = async (req, res) => {
 // Get All Tasks
 const getTasks = async (req, res) => {
   try {
-    const tasks = await Task.find({
+    const filter = {
       user: req.user.id,
-    });
+    };
+
+    if (req.query.status) {
+      filter.status = req.query.status;
+    }
+
+    if (req.query.priority) {
+      filter.priority = req.query.priority;
+    }
+
+    if (req.query.category) {
+      filter.category = req.query.category;
+    }
+
+    let query = Task.find(filter);
+
+    if (req.query.sort) {
+      query = query.sort(req.query.sort);
+    }
+
+    const tasks = await query;
 
     res.status(200).json({
       success: true,

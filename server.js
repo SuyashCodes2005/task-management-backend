@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const authRoutes = require("./routes/authRoutes");
 const connectDB = require("./config/db");
 const taskRoutes = require("./routes/taskRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
 
 dotenv.config();
 
@@ -19,6 +20,11 @@ app.use(morgan("dev"));
 app.get("/", (req, res) => {
   res.send("Task Management Backend API Running");
 });
+
+app.use(
+  "/api/dashboard",
+  dashboardRoutes
+);
 
 app.use("/api/auth", authRoutes);
 app.use("/api/tasks", taskRoutes);
