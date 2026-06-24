@@ -1,0 +1,848 @@
+{
+  "info": {
+    "_postman_id": "4d77ae71-b381-4c52-b427-7b7e52a8a939",
+    "name": "Task Management Backend API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56039732",
+    "_collection_link": "https://go.postman.co/collection/56039732-4d77ae71-b381-4c52-b427-7b7e52a8a939?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "http://localhost:5000/api/auth/register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Test User\",\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/auth/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0iy4}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Notification Test\",\r\n  \"description\": \"Due soon\",\r\n  \"status\": \"Pending\",\r\n  \"dueDate\": \"2026-06-23T12:30:00.000Z\",\r\n  \"priority\": \"High\",\r\n  \"category\": \"Testing\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_0iy4}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0m2k}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "6a36d6398a1b5a272b287ae2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0m2k}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"status\": \"Completed\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "6a36d6398a1b5a272b287ae2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{json_web_token_0m2k}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks/6a36d6398a1b5a272b287ae2",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks",
+            "6a36d6398a1b5a272b287ae2"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5MzMwMSwiZXhwIjoxNzgyNzk4MTAxfQ.XlhHY496EzPFY9FfIMY29DMYV7NsA7ggGfpcfg_OOc0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?status=Completed",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "Completed"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5MzMwMSwiZXhwIjoxNzgyNzk4MTAxfQ.XlhHY496EzPFY9FfIMY29DMYV7NsA7ggGfpcfg_OOc0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?priority=High",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "priority",
+              "value": "High"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5MzMwMSwiZXhwIjoxNzgyNzk4MTAxfQ.XlhHY496EzPFY9FfIMY29DMYV7NsA7ggGfpcfg_OOc0",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?category=Study&",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Study"
+            },
+            {
+              "key": "",
+              "value": null,
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MTk3ODYwMSwiZXhwIjoxNzgyNTgzNDAxfQ.ejPj-M7_7yxMvypUa7E_5ev8VktCEVbUuljd8vTnE1I",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?status=Pending&priority=High",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "Pending"
+            },
+            {
+              "key": "priority",
+              "value": "High"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/tasks",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MTk3ODYwMSwiZXhwIjoxNzgyNTgzNDAxfQ.ejPj-M7_7yxMvypUa7E_5ev8VktCEVbUuljd8vTnE1I",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/tasks?sort=dueDate",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "sort",
+              "value": "dueDate"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/dashboard/stats",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5Mzk1OSwiZXhwIjoxNzgyNzk4NzU5fQ.FZQZex3VD7K71O-0BjcdE229K_3-YG0bxw0S_tMuEVg",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/dashboard/stats",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "dashboard",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/analytics",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5NDA4NywiZXhwIjoxNzgyNzk4ODg3fQ._bDGMYy7bT4Y9_nvaK-f029XtzlQjtH5v3wfyVpM_jw",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/analytics",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "analytics"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "http://localhost:5000/api/notifications",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzZkNWIzOGExYjVhMjcyYjI4N2FlMSIsImlhdCI6MTc4MjE5NDA4NywiZXhwIjoxNzgyNzk4ODg3fQ._bDGMYy7bT4Y9_nvaK-f029XtzlQjtH5v3wfyVpM_jw",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/notifications",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "notifications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/notifications",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/notifications",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "notifications"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/analytics",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/analytics",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "analytics"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/dashboard/stats",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{json_web_token_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/dashboard/stats",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "dashboard",
+            "stats"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/tasks",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/tasks?status=Completed",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "tasks"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "Completed"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/tasks",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/tasks",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/tasks",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{supabase_service_role_api_key_0hkb}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Phase 2 Demo\",\r\n  \"description\": \"Testing notifications\",\r\n  \"status\": \"Pending\",\r\n  \"priority\": \"High\",\r\n  \"category\": \"Project\",\r\n  \"dueDate\": \"2026-06-25T12:00:00.000Z\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/tasks",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "tasks"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/auth/login",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"suyashphase2@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/auth/login",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "https://task-management-backend-rlun.onrender.com/api/auth/register",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Suyash\",\r\n  \"email\": \"suyashphase2@example.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://task-management-backend-rlun.onrender.com/api/auth/register",
+          "protocol": "https",
+          "host": [
+            "task-management-backend-rlun",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_1b70",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0i0t",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_0iy4",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0m2k",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0m2k",
+      "secret": true
+    },
+    {
+      "key": "supabase_service_role_api_key_0hkb",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0hkb",
+      "secret": true
+    },
+    {
+      "key": "auth_secret_0hkb",
+      "secret": true
+    }
+  ]
+}
